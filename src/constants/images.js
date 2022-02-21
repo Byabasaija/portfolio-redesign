@@ -35,8 +35,14 @@ import bolt from '../assets/bolt.png';
 import nb from '../assets/nb.png';
 import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
+import github from '../assets/github.png'
+import linkedin from '../assets/linkedin.png'
+import twitter from '../assets/twitter.png'
 
 export default {
+  linkedin,
+  twitter,
+  github,
   email,
   mobile,
   api,
