@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
 import './Footer.scss';
 
 const Footer = () => {
+  const form = useRef()
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -19,27 +20,23 @@ const Footer = () => {
 
   const handleSubmit = () => {
     setLoading(true);
-
-    const contact = {
-      _type: 'contact',
-      name: formData.username,
-      email: formData.email,
-      message: formData.message,
-    };
-
-    client.create(contact)
-      .then(() => {
+    emailjs.sendForm('service_t79lhio', 'template_jpx93yd', form.current, 'user_4UIPqhStZrrPsIS0ENw4K')
+    .then((result) => {
+        console.log(result.text);
         setLoading(false);
         setIsFormSubmitted(true);
-      })
-      .catch((err) => console.log(err));
+    }, (error) => {
+        console.log(error.text);
+    });
+
+    
   };
 
   return (
     <>
       <h2 className="head-text">  <span>Impressed? </span> Get my Resume</h2>
          <button type="button" className="p-text resume-btn" >
-         <a href="assets/Resume.pdf"  download="resume"> Get my Resume</a>
+         <a href={images.resume}  download> Get my Resume</a>
          </button>
 
          <h2 className="head-text">  <span>Or </span> send me a message</h2>
@@ -54,7 +51,7 @@ const Footer = () => {
         </div>
       </div>
       {!isFormSubmitted ? (
-        <div className="app__footer-form app__flex">
+        <form className="app__footer-form app__flex" ref={form}>
           <div className="app__flex">
             <input className="p-text" type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} />
           </div>
@@ -70,15 +67,21 @@ const Footer = () => {
               onChange={handleChangeInput}
             />
           </div>
-          <button type="button" className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
-        </div>
+          <button type="button" className="p-text"  onClick={handleSubmit} >{!loading ? 'Send Message' : 'Sending...'}</button>
+        </form>
       ) : (
         <div>
           <h3 className="head-text">
-            Thank you for getting in touch!
+            Congratulations ! <span>🎉  </span>
+            
           </h3>
         </div>
       )}
+
+         <div className="copyright">
+          <p className="p-text">@2022 PASCAL BYABASAIJA</p>
+          <p className="p-text">All rights reserved</p>
+        </div> 
     </>
   );
 };

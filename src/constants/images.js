@@ -27,6 +27,7 @@ import about04 from '../assets/about04.png';
 import profile from '../assets/pascal-full.png';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.svg';
+import resume from '../assets/Resume.pdf'
 
 import adidas from '../assets/adidas.png';
 import amazon from '../assets/amazon.png';
@@ -45,6 +46,7 @@ export default {
   github,
   email,
   mobile,
+  resume,
   api,
   cpp,
   css,
