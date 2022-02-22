@@ -4,11 +4,11 @@
   }
   
   .app__whitebg {
-    background-color: var(--white-color);
+    background-color: rgb(0, 0, 2);
   }
   
   .app__primarybg {
-    background-color: var(--primary-color);
+    background-color: rgb(0, 0, 2);
   }
   
   .app__container {
@@ -55,8 +55,32 @@
     font-size: 2.75rem;
     font-weight: 800;
     text-align: center;
-    color: var(--black-color);
+    color: var(--primary-color);
     text-transform: capitalize;
+
+
+  
+    span {
+      color: var(--secondary-color);
+    }
+  
+    @media screen and (min-width: 2000px) {
+      font-size: 4rem;
+    }
+  
+    @media screen and (max-width: 450px) {
+      font-size: 2rem;
+    }
+  }
+
+  .header-text {
+    font-size: 2.75rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--charchoal-black);
+    text-transform: capitalize;
+
+    
   
     span {
       color: var(--secondary-color);
@@ -176,7 +200,7 @@
     }
   }
   
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 678px) {
     .app__navigation,
     .app__social {
       display: none;

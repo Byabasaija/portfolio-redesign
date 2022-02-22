@@ -107,7 +107,8 @@
       padding: 1rem 2rem;
       border-radius: 10px;
       border: none;
-      background-color: var(--secondary-color);
+      background: rgb(63,94,251);
+      background: radial-gradient(circle, rgba(63,94,251,1) 19%, rgba(66,94,249,1) 32%, rgba(252,70,107,1) 100%);
   
       font-weight: 500;
       color: var(--white-color);
@@ -118,9 +119,7 @@
       transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
       cursor: pointer;
   
-      &:hover {
-        background-color: #2430af;
-      }
+     
     }
   
     @media screen and (max-width: 768px) {

@@ -20,7 +20,7 @@ const About = () => {
     <>
     <h2 className="head-text">
 
-      <span> Good Design </span> <br />
+      <span> Good Design </span> Means<br />
     
       <span> More Clients</span>
     </h2>
