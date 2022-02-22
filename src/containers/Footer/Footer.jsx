@@ -37,8 +37,12 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className="head-text">  <span>Impressed? </span> Let's Chat</h2>
+      <h2 className="head-text">  <span>Impressed? </span> Get my Resume</h2>
+         <button type="button" className="p-text resume-btn" >
+         <a href="assets/Resume.pdf"  download="resume"> Get my Resume</a>
+         </button>
 
+         <h2 className="head-text">  <span>Or </span> send me a message</h2>
       <div className="app__footer-cards">
         <div className="app__footer-card ">
           <img src={images.email} alt="email" />
