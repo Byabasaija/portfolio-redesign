@@ -1,7 +1,7 @@
 import React,{ useState, useEffect } from 'react'
 import { motion } from 'framer-motion';
 import { urlFor, client } from '../../client';
-import { AppWrap } from '../../wrapper';
+import { AppWrap, MotionWrap } from '../../wrapper';
 import './About.scss'
 // import { images } from '../../constants'
 
@@ -19,10 +19,10 @@ const About = () => {
   return (
     <>
     <h2 className="head-text">
-      I Know That 
+
       <span> Good Design </span> <br />
-      means
-      <span> Good business</span>
+    
+      <span> More Clients</span>
     </h2>
 
     <div className="app__profiles">
@@ -42,5 +42,8 @@ const About = () => {
     </>
   )
 }
-
-export default AppWrap(About, 'home')
+export default AppWrap(
+  MotionWrap(About, 'app__about'),
+  'about',
+  'app__whitebg',
+);
