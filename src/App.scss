@@ -48,6 +48,14 @@
     p {
       text-transform: uppercase;
       color: var(--black-color);
+
+     
+    }
+
+    @media screen and (max-width: 450px) {
+     
+      justify-content: center;
+      align-items: center;
     }
   }
   
@@ -70,7 +78,9 @@
   
     @media screen and (max-width: 450px) {
       font-size: 2rem;
+
     }
+    
   }
 
   .header-text {
